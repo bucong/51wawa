@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>抓娃娃</title>
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css"/>
+	<script src="js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body style="background: url(images/bg.png);background-size: cover;">
+	<article class="operation">
+		<section class="head" style="background: transparent;">
+			<div><a href="javascript:history.back(-1)" class="fa fa-angle-left"></a></div>
+			<div class="people mui-text-right">
+				<span>
+					<label>6人</label><br />
+					在房间
+				</span>
+				<img src="images/head_03.png"/>
+				<img src="images/head_06.png"/>
+				<img src="images/head_08.png"/>
+				<img src="images/head_08.png"/>
+				<img src="images/head_08.png"/>
+				<img src="images/head_08.png"/>
+			</div>
+		</section>
+		<section class="wawa">
+			<img src="images/wawa_02.png" class="video"/>
+			<div class="now-people hide">
+				<div class="flex">
+					<img src="images/head_06.png"/>
+					<div>
+						<h4>蓝墨水的上游</h4>
+						<span>游戏中</span>
+					</div>
+				</div>
+				<p>蓝墨水的上游 抓到娃娃啦！</p>
+			</div>
+			<a href="" class="change-camera"><img src="images/operation_03.png"/></a>
+			<div class="chat">
+				<ul>
+					<li><div><span>小小兔：</span>我一次都没有中过</div></li>
+					<li class="come"><div>卖火柴的小女孩 来了</div></li>
+					<li><div><span>卖火柴的小女孩：</span>这台机子好使吗</div></li>
+					<li><div><span>小小兔：</span>直接抓</div></li>
+					<li><div><span>妖妖小仙女：</span>好难抓啊</div></li>
+				</ul>
+				<label class="fa fa-angle-down"></label>
+			</div>
+			<div class="time hide">30s</div>
+		</section>
+		<section class="prepare">
+			<button>
+				19
+			</button>
+			<div class="flex">
+				<div>
+					<img src="images/wawa_05.png"/>
+				</div>
+				<div>
+					<span>余额： 245</span>
+					<a href="recharge.html"><label>去充值</label></a>
+				</div>
+				
+				<div>
+					<a href="recharge.html">
+						<img src="images/wawa_07.png"/>
+					</a>
+				</div>
+			</div>
+			<div class="bottom">
+				<img src="images/wawa_09.png"/>
+			</div>
+		</section>
+		<section class="zua hide">
+			<button class="up"><img src="images/up.png"/></button>
+			<button class="right"><img src="images/right.png"/></button>
+			<button class="down"><img src="images/down.png"/></button>
+			<button class="left"><img src="images/left.png"/></button>
+			<button class="go"><img src="images/go.png"/></button>
+		</section>
+		<section class="result yes hide">
+			<div class="content">
+				<h5>500</h5>
+				<div class="flex">
+					<a href="" class="fail">稍后再试</a>
+					<a href="" class="again">再来一局(8)</a>
+				</div>
+			</div>
+		</section>
+		<section class="result no hide">
+			<div class="content">
+				<h5>500</h5>
+				<div class="flex">
+					<a href="" class="write">填写收货地址</a>
+					<a href="" class="again">再来一局(8)</a>
+				</div>
+			</div>
+		</section>
+	</article>
+	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//进入抓娃娃
+		$('.operation .prepare button').click(function(){
+			$('.operation .prepare').hide();
+			$('.operation .now-people').show();
+			$('.operation .zua').show();
+			$('.operation .time').show();
+			var i=30;
+			var time='';
+			time=setInterval(function(){
+				i--;
+				if(i>=0){
+					$('.operation .time').html(i+'s');
+				}else{
+					clearInterval(time);
+				}
+			},1000)
+		})
+		//上下左右
+		$('.up').click(function(){
+			console.log('上');
+		})
+		$('.right').click(function(){
+			console.log('右');
+		})
+		$('.down').click(function(){
+			console.log('下');
+		})
+		$('.left').click(function(){
+			console.log('左');
+		})
+		//go
+		$('.operation .go').click(function(){
+			$(this).attr('disabled',true);
+		})
+	</script>
+</body>
+
+</html>

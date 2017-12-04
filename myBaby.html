@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>我的娃娃</title>
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css"/>
+	<script src="js/fontSize.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<article class="my-baby">
+		<section class="top">
+			<section class="head" style="background: transparent;margin: 0 -.6rem;">
+				<div><a href="javascript:history.back(-1)" class="fa fa-angle-left"></a></div>
+				<div class="mui-text-right"><a href="history.html">游戏历史</a></div>
+			</section>
+			<div class="flex">
+				<span></span>
+				<img src="images/head_06.png"/>
+				<span>共抓中0次</span>
+			</div>
+			<h2>抓娃娃会上瘾</h2>
+		</section>
+		<ul>
+			<li>
+				<a href="babyDetail.html">
+					<figure>
+						<img src="images/index_11.png"/>
+						<figcaption>
+							<h5>微笑猪！粉色的！</h5>
+							<p>3小时前</p>
+						</figcaption>
+					</figure>
+				</a>	
+			</li>
+			<li>
+				<a href="babyDetail.html">
+					<figure>
+						<img src="images/index_13.png"/>
+						<figcaption>
+							<h5>变装老鼠布朗</h5>
+							<p>2017/10/26 18:36:08</p>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+			<li>
+				<a href="babyDetail.html">
+					<figure>
+						<img src="images/index_11.png"/>
+						<figcaption>
+							<h5>微笑猪！粉色的！</h5>
+							<p>3小时前</p>
+						</figcaption>
+					</figure>
+				</a>	
+			</li>
+			<li>
+				<a href="babyDetail.html">
+					<figure>
+						<img src="images/index_13.png"/>
+						<figcaption>
+							<h5>变装老鼠布朗</h5>
+							<p>2017/10/26 18:36:08</p>
+						</figcaption>
+					</figure>
+				</a>
+			</li>
+		</ul>
+		<section class="no-baby">
+			<img src="images/myBaby_03.png"/>
+			<a href="operation.html"></a>
+		</section>
+	</article>
+	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		if($('.my-baby ul li').length>0){
+			$('.my-baby ul').show();
+			$('.my-baby .no-baby').hide();
+		}
+	</script>
+</body>
+
+</html>
