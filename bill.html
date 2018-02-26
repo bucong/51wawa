@@ -14,12 +14,12 @@
 </head>
 <body>
 	<article class="bill">
+		<section class="head">
+			<div><a href="javascript:history.back(-1)" class="fa fa-angle-left"></a></div>
+			<h5>娃娃币账单</h5>
+			<div class="mui-text-right"></div>
+		</section>
 		<section class="balance">
-			<section class="head" style="background: transparent;">
-				<div><a href="javascript:history.back(-1)" class="fa fa-angle-left"></a></div>
-				<h5>娃娃币账单</h5>
-				<div class="mui-text-right"></div>
-			</section>
 			<h1>0</h1>
 			<p>金币余额</p>
 		</section>
@@ -46,17 +46,8 @@
 				<h4 class="plus">+60</h4>
 			</li>
 		</ul>
-		<section class="no-baby">
-			<img src="images/myBaby_03.png"/>
-		</section>
 	</article>
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
-	<script type="text/javascript">
-		if($('.bill ul li').length>0){
-			$('.bill ul').show();
-			$('.bill .no-baby').hide();
-		}
-	</script>
 </body>
 
 </html>

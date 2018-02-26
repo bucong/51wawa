@@ -6,18 +6,18 @@
     <title>抓娃娃</title>
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css"/>
     <link rel="stylesheet" type="text/css" href="css/onepage-scroll.css"/>
-    <link rel="stylesheet" href="css/style.css" />
 	<script src="js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery.onepage-scroll.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body class="body" onmousewheel="return false;">
+<body style="background: #ffe33a;" onmousewheel="return false;">
 <div class="main">
 	<article class="operation page page1">
-		<section class="head" style="background: transparent;">
+		<section class="head">
 			<div><a href="javascript:history.back(-1)" class="fa fa-angle-left"></a></div>
 			<div class="people mui-text-right">
 				<span>
@@ -33,9 +33,9 @@
 			</div>
 		</section>
 		<section class="wawa">
-			<div class="load-after hide">
+			<div class="load-after">
 				<img src="images/wawa_02.png" class="video"/>
-				<div class="now-people hide">
+				<div class="now-people">
 					<div class="flex">
 						<img src="images/head_06.png"/>
 						<div>
@@ -43,8 +43,17 @@
 							<span>游戏中</span>
 						</div>
 					</div>
-					<p>蓝墨水的上游 抓到娃娃啦！</p>
 				</div>
+				<p class="catch-info">恭喜<span>蓝魔水的上游</span>抓到娃娃啦！</p>
+				<div class="question-open flex">
+					<img src="images/question_03.png"/>
+					<p>问题反馈</p>
+				</div>
+				<div class="web-lazy flex">
+					<img src="images/question_07.png"/>
+					<p>当前网络卡顿，<br />影响操作流畅性。</p>
+				</div>
+				<a href="" class="help"><img src="images/help_03.png"/></a>
 				<a href="" class="change-camera"><img src="images/operation_03.png"/></a>
 				<div class="chat">
 					<ul>
@@ -57,24 +66,27 @@
 					<label class="fa fa-angle-down"></label>
 				</div>
 				<div class="time hide">30s</div>
+				<a href="myBaby.html" class="to-mybaby"></a>
 			</div>
-			<div class="loading"></div>
+			<div class="loading hide"></div>
 		</section>
 		<section class="prepare">
 			<div class="start">
-				<button disabled>19</button>
+				<button disabled>
+					<h5>开始游戏</h5>
+					19个币/次
+				</button>
 			</div>
 			<div class="flex">
 				<div class="open-chat">
 					<img src="images/wawa_05.png"/>
+					<span>聊天</span>
 				</div>
 				<div>
 					<span>余额： 245</span>
-					<a href="recharge.html"><label>去充值</label></a>
-				</div>
-				
-				<div class="operate-share">
-					<img src="images/wawa_07.png"/>
+					<a href="recharge.html">
+						<img src="images/wawa_07.png"/>
+					</a>
 				</div>
 			</div>
 		</section>
@@ -89,27 +101,37 @@
 			<textarea name="" rows="2" cols="" placeholder="请输入聊天内容..."></textarea>
 			<button>发送</button>
 		</div>
-		<div class="share-box">
-			<img src="images/share1_03.png"/>
-		</div>
 		<div class="chat-meng"></div>
 		<section class="result yes hide">
 			<div class="content">
-				<h5>500</h5>
+				<h5>
+					<img src="images/result_03.png"/>
+				</h5>
+				<div class="img">
+					<img src="images/result_07.png"/>
+				</div>
 				<div class="flex">
-					<a href="" class="fail">稍后再试</a>
-					<a href="" class="again">再来一局(8)</a>
+					<a href="address.html" class="write">填写收货地址</a>
+					<button class="again">再战一局</button>
 				</div>
 			</div>
 		</section>
 		<section class="result no hide">
-			<div class="content">
-				<h5>500</h5>
-				<div class="flex">
-					<a href="" class="write">填写收货地址</a>
-					<a href="" class="again">再来一局(8)</a>
-				</div>
+			<div>
+				<p>没抓到！您拥有<img src="images/result_04.png"/><span>245</span>，再战一局好不好...</p>
+				<button>再战一局(<span>8</span>)</button>
 			</div>
+		</section>
+		<section class="no-enough">
+			<div class="close-no-enough"><span>&times;</span></div>
+			<p>呀，游戏币不够了，快去充值吧~</p>
+			<div class="flex">
+				<a href="javascript:void(0)" style="color: #728ba3;">稍后再充</a>
+				<a href="recharge.html" style="color: #ffa61a;">立即充值</a>
+			</div>
+		</section>
+		<section class="question-back">
+			<div class="close-question-back"><span>&times;</span></div>
 		</section>
 	</article>
 	<article class="detail page page2">
@@ -129,8 +151,8 @@
 		</section>
 		<section class="content">
 			<div class="baby-detail list">
-				<img src="images/index_01.png"/>
-				<h4>暴走湿纸巾</h4>
+				<h3>粉色微笑猪</h3>
+				<img src="images/index_11.png"/>
 				<p>宝贝大小：20cm &times; 15cm</p>
 			</div>
 			<div class="record list">
@@ -291,6 +313,8 @@
 		$('.chat-meng').click(function(){
 			$('.chat-write').hide();
 			$('.chat-meng').hide();
+			$('.no-enough').hide();
+			$('.question-back').hide();
 			$('.chat-write textarea')[0].blur();
 		})
 		$('.chat-write button').click(function(){
@@ -298,14 +322,34 @@
 			$('.chat-meng').hide();
 			$('.chat-write textarea')[0].blur();
 		})
-		//分享
-		$('.operate-share').click(function(){
-			$('.share-box').show();
+		//关闭游戏币不足
+		$('.no-enough').on('click',['.close-no-enough','a'],function(){
+			$('.no-enough').hide();
+			$('.chat-meng').hide();
 		})
-		$('.share-box').click(function(){
-			$('.share-box').hide();
+		//关闭二维码
+		$('.question-back').on('click','.close-question-back',function(){
+			$('.question-back').hide();
+			$('.chat-meng').hide();
 		})
-		//tab
+		//开启问题反馈
+		$('.question-open').click(function(){
+			$('.chat-meng').show();
+			$('.question-back').show();
+		})
+		//抓到娃娃弹幕
+		$('.catch-info').css('text-indent','-10rem');
+		//整屏切换
+		$('.main').onepage_scroll({
+			sectionContainer: '.page',
+			loop: false
+		});
+		$('.detail').css('margin-top','-1.1rem');
+		//调整页面高度
+		var zuaHeight=$(window).height()-$('.head').height()-$('.prepare').height()-18;
+        $('.wawa').height(zuaHeight);
+        $('.video').height(zuaHeight);
+		//page2排行榜序号
 		var li=$('.ranking li').length;
 		for(var i=0;i<li;i++){
 			var num=i+1;
@@ -315,17 +359,6 @@
 				$('.ranking li').eq(i).find('div').html(num);
 			}
 		}
-		//整屏切换
-		$('.detail').css('margin-top','-1rem');
-		$('.main').onepage_scroll({
-			sectionContainer: '.page',
-			loop: false
-		});
-
-        //屏幕自适应高度
-        var zuaHeight=$(window).height()-$('.head').height()-$('.prepare').height()-18;
-        $('.wawa').height(zuaHeight);
-        $('.video').height(zuaHeight);
 	</script>
 </body>
 

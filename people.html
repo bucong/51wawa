@@ -14,20 +14,21 @@
 </head>
 <body style="background: #f6f8fa;">
 	<article class="people">
+		<section class="head">
+			<div><a href="javascript:history.back(-1)" class="fa fa-angle-left"></a></div>
+			<div class="mui-text-right change-name">修改昵称</div>
+		</section>
 		<section class="people-head">
-			<section class="head" style="background: transparent;">
-				<div><a href="javascript:history.back(-1)" class="fa fa-angle-left"></a></div>
-			</section>
 			<img src="images/head_03.png"/>
 		</section>
-		<h2>抓娃娃会上瘾</h2>
+		<h2><input type="text" value="抓娃娃会上瘾" disabled="disabled"/></h2>
 		<ul>	
 			<li>
 				<a href="recharge.html" class="flex">
 					<img src="images/people_05.png"/>
 					<div class="flex">
 						<h5>我的娃娃币</h5>
-						<div>0币 <label>去充值</label> <span class="fa fa-angle-right"></span></div>
+						<div>0币<span class="fa fa-angle-right"></span></div>
 					</div>
 				</a>
 			</li>
@@ -70,7 +71,7 @@
 				</a>
 			</li>
 		</ul>
-		<ul>	
+		<ul>
 			<li>
 				<a href="bindPhone.html" class="flex">
 					<img src="images/people_13.png"/>
@@ -81,7 +82,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="info.html" class="flex">
+				<a href="" class="flex">
 					<img src="images/people_14.png"/>
 					<div class="flex">
 						<h5>消息</h5>
@@ -90,7 +91,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="setting.html" class="flex">
+				<a href="" class="flex">
 					<img src="images/people_16.png"/>
 					<div class="flex">
 						<h5>设置</h5>
@@ -99,7 +100,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="kefu.html" class="flex">
+				<a href="" class="flex">
 					<img src="images/people_18.png"/>
 					<div class="flex">
 						<h5>客服</h5>
@@ -108,7 +109,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="feedback.html" class="flex">
+				<a href="" class="flex">
 					<img src="images/people_20.png"/>
 					<div class="flex">
 						<h5>反馈</h5>
@@ -119,6 +120,19 @@
 		</ul>
 	</article>
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//个人中心修改昵称
+		$('.change-name').click(function(){
+			if($(this).html()=="修改昵称"){
+				$(this).html('完成');
+				$('.people h2 input').removeAttr('disabled');
+				$('.people h2 input')[0].focus();
+			}else{
+				$(this).html('修改昵称');
+				$('.people h2 input').attr('disabled','disabled');
+			}
+		})
+	</script>
 </body>
 
 </html>

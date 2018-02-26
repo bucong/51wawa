@@ -67,12 +67,10 @@
             if (deltaY >= 50) {
               $this.trigger("swipeUp");
               $('.detail').css('margin-top',0);
-              $('.detail .tab').css('background-image','url(images/tabBg1.png)');
             }
             if (deltaY <= -50) {
               $this.trigger("swipeDown");
-              $('.detail').css('margin-top','-1rem');
-              $('.detail .tab').css('background-image','url(images/tabBg2.png)');
+              $('.detail').css('margin-top','-1.1rem');
 
             }
             if (Math.abs(deltaX) >= 50 || Math.abs(deltaY) >= 50) {

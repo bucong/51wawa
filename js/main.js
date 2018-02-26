@@ -39,12 +39,8 @@ $('.detail .tab div').click(function(){
 	$('.detail .content .list').eq($(this).index()).show().siblings().hide();
 })
 
-//客服
-$('#kefu').keyup(function(e){
-	if(e.keyCode==13){
-		var kefu=$(this).val();
-		$('.kefu ul').append('<li class="right"><span>'+kefu+'</span></li>');
-		$(this).val('');
-		$(document).scrollTop($(document).height()-$(window).height()); 
-	}
+//申请发货
+$('.delivery .tab div').click(function(){
+	$(this).addClass('active').siblings().removeClass('active');
+	$('.delivery .apply .tab-content').eq($(this).index()).show().siblings().hide();
 })

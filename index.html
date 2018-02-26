@@ -16,13 +16,58 @@
 	<article class="index">
 		<section class="head">
 			<div><a href="people.html"><img src="images/index_03.png"/></a></div>
-			<h5><img src="images/title_03.png"/></h5>
+			<h5>51抓娃娃</h5>
 			<div class="mui-text-right"></div>
 		</section>
 		<section class="ind-share">
-			<a href="invite.html">
-				<img src="images/index_07.png"/>
-			</a>
+			<div class="mui-slider">
+				<div class="mui-slider-group mui-slider-loop">
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="javascript:;"><img src="images/index_1.jpg" /></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="javascript:;"><img src="images/index_1.jpg" /></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="javascript:;"><img src="images/index_1.jpg" /></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="javascript:;"><img src="images/index_1.jpg" /></a>
+					</div>
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="javascript:;"><img src="images/index_1.jpg" /></a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="news">
+			<div class="news-box">
+				<div class="news-list flex">
+					<img src="images/head_08.png" class="news-head"/>
+					<h5>1此爪一出，谁与争锋！[天下孤独，我独醉] 又抓到一只<span>[变装老鼠布朗]</span></h5>
+					<img src="images/index_13.png" class="news-baby"/>
+				</div>
+				<div class="news-list flex">
+					<img src="images/head_08.png" class="news-head"/>
+					<h5>此爪一出，谁与争锋！[天下孤独，我独醉] 又抓到一只<span>[变装老鼠布朗]</span></h5>
+					<img src="images/index_13.png" class="news-baby"/>
+				</div>
+				<div class="news-list flex">
+					<img src="images/head_08.png" class="news-head"/>
+					<h5>此爪一出，谁与争锋！[天下孤独，我独醉] 又抓到一只<span>[变装老鼠布朗]</span></h5>
+					<img src="images/index_13.png" class="news-baby"/>
+				</div>
+				<div class="news-list flex">
+					<img src="images/head_08.png" class="news-head"/>
+					<h5>此爪一出，谁与争锋！[天下孤独，我独醉] 又抓到一只<span>[变装老鼠布朗]</span></h5>
+					<img src="images/index_13.png" class="news-baby"/>
+				</div>
+				<div class="news-list flex">
+					<img src="images/head_08.png" class="news-head"/>
+					<h5>此爪一出，谁与争锋！[天下孤独，我独醉] 又抓到一只<span>[变装老鼠布朗]</span></h5>
+					<img src="images/index_13.png" class="news-baby"/>
+				</div>
+			</div>
 		</section>
 		<div class="title">
 			<h5>房间列表</h5>
@@ -87,7 +132,89 @@
 			</li>
 		</ul>
 	</article>
+	<div class="meng"></div>
+	<div class="register-box hide">
+		<span>&times;</span>
+		<p>绑定手机再送<label>20</label>币~</p>
+		<div class="flex">
+			<a href="bindPhone.html">绑定手机</a>
+			<a href="javascript:void(0)" class="quick-start">马上开始</a>
+		</div>
+	</div>
+	<div class="sign">
+		<div class="sign-box">
+			<img src="images/sign_01.png" class="close"/>
+			<img src="images/sign_03.png" class="tit"/>
+			<ul>
+				<li class="already">
+					<h3>DAY1</h3>
+					<p>+10</p>
+				</li>
+				<li class="already">
+					<h3>DAY2</h3>
+					<p>+12</p>
+				</li>
+				<li>
+					<h3>DAY3</h3>
+					<p>+16</p>
+				</li>
+				<li>
+					<h3>DAY4</h3>
+					<p>+20</p>
+				</li>
+				<li>
+					<h3>DAY5</h3>
+					<p>+26</p>
+				</li>
+				<li>
+					<h3>DAY6</h3>
+					<p>+32</p>
+				</li>
+				<li class="day7">
+					<p>+40</p>
+				</li>
+			</ul>
+			<div class="sign-btn flex">
+				<p>94 娃娃币</p>
+				<button>签到</button>
+			</div>
+			<p class="sign-sum">已连续签到 <span>2</span> 天</p>
+		</div>
+	</div>
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('.meng').click(function(){
+			$('.meng').hide();
+			$('.register-box').hide();
+		})
+		$('.register-box').on('click',['span','a'],function(){
+			$('.meng').hide();
+			$('.register-box').hide();
+		})
+		//翻滚
+		var n=0;
+		var boxN=$('.news-box .news-list').length;
+		var news1=$('.news-box .news-list').eq(0).clone();
+		console.log(boxN)
+		$('.news-box').append(news1);
+		setInterval(function(){
+			if(n>=boxN){
+				$('.news-box').css({'top':0+'rem'});
+				n=0;
+			}
+			n++;
+			$('.news-box').animate({'top':-n+'rem'},500);
+		},2000)
+		//首页轮播图
+		var gallery = mui('.mui-slider');
+		gallery.slider({
+		  interval:3000//自动轮播周期，若为0则不自动播放，默认为0；
+		});
+		//签到
+		$('.sign .close').click(function(){
+			$('.sign').hide();
+		})
+	</script>
 </body>
 
 </html>
