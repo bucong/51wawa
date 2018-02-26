@@ -13,7 +13,7 @@ code,kbd,pre,samp{font-family:courier,courier,monospace;}
 li{list-style:none;}
 a,a:hover,a:link,a:visited,a:active{text-decoration:none;}
 img{border:0;}
-button,input,select,textarea{font-size:100%;outline: none}
+button,input,select,textarea{font-size:100%;outline: none;font-family: "微软雅黑";}
 table{border-collapse:collapse;border-spacing:0;}
 .hide{display:none;}
 .fl{float: left;}

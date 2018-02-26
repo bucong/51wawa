@@ -6,14 +6,17 @@
     <title>抓娃娃</title>
     <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
     <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="css/onepage-scroll.css"/>
+    <link rel="stylesheet" href="css/style.css" />
 	<script src="js/fontSize.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.onepage-scroll.js" type="text/javascript" charset="utf-8"></script>
 </head>
-<body style="background: url(images/bg.png);background-size: cover;">
-	<article class="operation">
+<body class="body" onmousewheel="return false;">
+<div class="main">
+	<article class="operation page page1">
 		<section class="head" style="background: transparent;">
 			<div><a href="javascript:history.back(-1)" class="fa fa-angle-left"></a></div>
 			<div class="people mui-text-right">
@@ -30,36 +33,39 @@
 			</div>
 		</section>
 		<section class="wawa">
-			<img src="images/wawa_02.png" class="video"/>
-			<div class="now-people hide">
-				<div class="flex">
-					<img src="images/head_06.png"/>
-					<div>
-						<h4>蓝墨水的上游</h4>
-						<span>游戏中</span>
+			<div class="load-after hide">
+				<img src="images/wawa_02.png" class="video"/>
+				<div class="now-people hide">
+					<div class="flex">
+						<img src="images/head_06.png"/>
+						<div>
+							<h4>蓝墨水的上游</h4>
+							<span>游戏中</span>
+						</div>
 					</div>
+					<p>蓝墨水的上游 抓到娃娃啦！</p>
 				</div>
-				<p>蓝墨水的上游 抓到娃娃啦！</p>
+				<a href="" class="change-camera"><img src="images/operation_03.png"/></a>
+				<div class="chat">
+					<ul>
+						<li><div><span>小小兔：</span>我一次都没有中过</div></li>
+						<li class="come"><div>卖火柴的小女孩 来了</div></li>
+						<li><div><span>卖火柴的小女孩：</span>这台机子好使吗</div></li>
+						<li><div><span>小小兔：</span>直接抓</div></li>
+						<li><div><span>妖妖小仙女：</span>好难抓啊</div></li>
+					</ul>
+					<label class="fa fa-angle-down"></label>
+				</div>
+				<div class="time hide">30s</div>
 			</div>
-			<a href="" class="change-camera"><img src="images/operation_03.png"/></a>
-			<div class="chat">
-				<ul>
-					<li><div><span>小小兔：</span>我一次都没有中过</div></li>
-					<li class="come"><div>卖火柴的小女孩 来了</div></li>
-					<li><div><span>卖火柴的小女孩：</span>这台机子好使吗</div></li>
-					<li><div><span>小小兔：</span>直接抓</div></li>
-					<li><div><span>妖妖小仙女：</span>好难抓啊</div></li>
-				</ul>
-				<label class="fa fa-angle-down"></label>
-			</div>
-			<div class="time hide">30s</div>
+			<div class="loading"></div>
 		</section>
 		<section class="prepare">
-			<button>
-				19
-			</button>
+			<div class="start">
+				<button disabled>19</button>
+			</div>
 			<div class="flex">
-				<div>
+				<div class="open-chat">
 					<img src="images/wawa_05.png"/>
 				</div>
 				<div>
@@ -67,23 +73,26 @@
 					<a href="recharge.html"><label>去充值</label></a>
 				</div>
 				
-				<div>
-					<a href="recharge.html">
-						<img src="images/wawa_07.png"/>
-					</a>
+				<div class="operate-share">
+					<img src="images/wawa_07.png"/>
 				</div>
-			</div>
-			<div class="bottom">
-				<img src="images/wawa_09.png"/>
 			</div>
 		</section>
 		<section class="zua hide">
-			<button class="up"><img src="images/up.png"/></button>
-			<button class="right"><img src="images/right.png"/></button>
-			<button class="down"><img src="images/down.png"/></button>
-			<button class="left"><img src="images/left.png"/></button>
-			<button class="go"><img src="images/go.png"/></button>
+			<button class="up"></button>
+			<button class="right"></button>
+			<button class="down"></button>
+			<button class="left"></button>
+			<button class="go"></button>
 		</section>
+		<div class="chat-write hide">
+			<textarea name="" rows="2" cols="" placeholder="请输入聊天内容..."></textarea>
+			<button>发送</button>
+		</div>
+		<div class="share-box">
+			<img src="images/share1_03.png"/>
+		</div>
+		<div class="chat-meng"></div>
 		<section class="result yes hide">
 			<div class="content">
 				<h5>500</h5>
@@ -103,6 +112,131 @@
 			</div>
 		</section>
 	</article>
+	<article class="detail page page2">
+		<section class="tab flex">
+			<div class="active">
+				<span><img src="images/tab_03.png"/></span>
+				<h4>娃娃详情</h4>
+			</div>
+			<div>
+				<span><img src="images/tab_03.png"/></span>
+				<h4>最近抓中记录</h4>
+			</div>
+			<div>
+				<span><img src="images/tab_03.png"/></span>
+				<h4>排行榜</h4>
+			</div>
+		</section>
+		<section class="content">
+			<div class="baby-detail list">
+				<img src="images/index_01.png"/>
+				<h4>暴走湿纸巾</h4>
+				<p>宝贝大小：20cm &times; 15cm</p>
+			</div>
+			<div class="record list">
+				<ul>
+					<li>
+						<img src="images/head_03.png" class="head-img"/>
+						<h4>熊宝宝Alex</h4>
+						<span>刚刚</span>
+					</li>
+					<li>
+						<img src="images/head_06.png" class="head-img"/>
+						<h4>蓝墨水的上游</h4>
+						<span>9分36秒前</span>
+					</li>
+					<li>
+						<img src="images/head_08.png" class="head-img"/>
+						<h4>MIKENN</h4>
+						<span>9分45秒前</span>
+					</li>
+					<li>
+						<img src="images/head_10.png" class="head-img"/>
+						<h4>皮卡丘你要好好长大</h4>
+						<span>10分26秒前</span>
+					</li>
+					<li>
+						<img src="images/head_12.png" class="head-img"/>
+						<h4>ANTINUS</h4>
+						<span>10分39秒前</span>
+					</li>
+					<li>
+						<img src="images/head_14.png" class="head-img"/>
+						<h4>海里的稻子</h4>
+						<span>18分58秒前</span>
+					</li>
+					<li>
+						<img src="images/head_16.png" class="head-img"/>
+						<h4>局长大人爱上抓娃娃</h4>
+						<span>2小时30分钟前</span>
+					</li>
+					<li>
+						<img src="images/head_18.png" class="head-img"/>
+						<h4>蛋炒饭</h4>
+						<span>2017/10/26</span>
+					</li>
+					<li>
+						<img src="images/head_12.png" class="head-img"/>
+						<h4>你是我的小苹果</h4>
+						<span>2017/10/18</span>
+					</li>
+				</ul>
+			</div>
+			<div class="ranking list">
+				<ul>
+					<li>
+						<div></div>
+						<img src="images/head_03.png" class="head-img"/>
+						<h4>熊宝宝Alex</h4>
+						<p>27次</p>
+					</li>
+					<li>
+						<div></div>
+						<img src="images/head_06.png" class="head-img"/>
+						<h4>蓝墨水的上游</h4>
+						<p>27次</p>
+					</li>
+					<li>
+						<div></div>
+						<img src="images/head_08.png" class="head-img"/>
+						<h4>MIKENN</h4>
+						<p>22次</p>
+					</li>
+					<li>
+						<div></div>
+						<img src="images/head_10.png" class="head-img"/>
+						<h4>皮卡丘你要好好长大</h4>
+						<p>17次</p>
+					</li>
+					<li>
+						<div></div>
+						<img src="images/head_12.png" class="head-img"/>
+						<h4>ANTINUS</h4>
+						<p>27次</p>
+					</li>
+					<li>
+						<div></div>
+						<img src="images/head_14.png" class="head-img"/>
+						<h4>海里的稻子</h4>
+						<p>15次</p>
+					</li>
+					<li>
+						<div></div>
+						<img src="images/head_16.png" class="head-img"/>
+						<h4>局长大人爱上抓娃娃</h4>
+						<p>12次</p>
+					</li>
+					<li>
+						<div></div>
+						<img src="images/head_18.png" class="head-img"/>
+						<h4>蛋炒饭</h4>
+						<p>7次</p>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</article>
+</div>
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		//进入抓娃娃
@@ -139,6 +273,59 @@
 		$('.operation .go').click(function(){
 			$(this).attr('disabled',true);
 		})
+		//输入字幕
+		$('.prepare .open-chat').click(function(){
+			$('.chat-write').show();
+			$('.chat-meng').show();
+			$('.chat-write textarea')[0].focus();
+		})
+		$('.chat-write textarea').keyup(function(e){
+			if(e.keyCode==13){
+				mui.alert('你点击了回车');
+				$('.chat-write').hide();
+				$('.chat-meng').hide();
+				$('.chat-write textarea').val('');
+				$('.chat-write textarea')[0].blur();
+			}
+		})
+		$('.chat-meng').click(function(){
+			$('.chat-write').hide();
+			$('.chat-meng').hide();
+			$('.chat-write textarea')[0].blur();
+		})
+		$('.chat-write button').click(function(){
+			$('.chat-write').hide();
+			$('.chat-meng').hide();
+			$('.chat-write textarea')[0].blur();
+		})
+		//分享
+		$('.operate-share').click(function(){
+			$('.share-box').show();
+		})
+		$('.share-box').click(function(){
+			$('.share-box').hide();
+		})
+		//tab
+		var li=$('.ranking li').length;
+		for(var i=0;i<li;i++){
+			var num=i+1;
+			if(i<3){
+				$('.ranking li').eq(i).find('div').html('<img src="images/sort'+num+'.png"/>');
+			}else{
+				$('.ranking li').eq(i).find('div').html(num);
+			}
+		}
+		//整屏切换
+		$('.detail').css('margin-top','-1rem');
+		$('.main').onepage_scroll({
+			sectionContainer: '.page',
+			loop: false
+		});
+
+        //屏幕自适应高度
+        var zuaHeight=$(window).height()-$('.head').height()-$('.prepare').height()-18;
+        $('.wawa').height(zuaHeight);
+        $('.video').height(zuaHeight);
 	</script>
 </body>
 

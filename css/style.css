@@ -81,7 +81,7 @@ input::-webkit-input-placeholder {
 }
 .login-bg .login button {
   display: block;
-  margin: 10.4rem auto .4rem auto;
+  margin: 9.46rem auto .4rem auto;
   width: 3.66rem;
   height: 1.11rem;
   border: none;
@@ -117,6 +117,7 @@ input::-webkit-input-placeholder {
 .index .ind-share a img {
   width: 7.1rem;
   height: 3.14rem;
+  border-radius: .1rem;
 }
 .index ul {
   padding: .2rem;
@@ -181,6 +182,19 @@ input::-webkit-input-placeholder {
 }
 .title a span {
   font-size: .4rem;
+}
+.touch-swipe article {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.operation {
+  height: 10.8rem;
+  background: url(../images/bg.png);
+  background-size: cover;
 }
 .operation .people {
   width: 3.4rem;
@@ -293,15 +307,32 @@ input::-webkit-input-placeholder {
   font-size: .72rem;
   color: #fff;
 }
+.operation .wawa .loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/loading.png);
+  background-position: center;
+  background-size: 4rem 4.5rem;
+  background-repeat: no-repeat;
+  z-index: 100;
+}
 .operation .prepare {
   position: relative;
+  height: 2.5rem;
 }
-.operation .prepare button {
+.operation .prepare .start {
   position: absolute;
   left: 1.95rem;
+  top: -0.7rem;
+  border-radius: 1rem;
+  background: #ffe264;
+}
+.operation .prepare .start button {
   width: 3.64rem;
   height: 1.42rem;
-  top: -0.7rem;
   border: none;
   background: url(../images/operation_06.png) no-repeat;
   background-size: cover;
@@ -309,8 +340,9 @@ input::-webkit-input-placeholder {
   font-size: .32rem;
   line-height: 1.96rem;
   text-indent: 1rem;
+  z-index: 200;
 }
-.operation .prepare button h5 {
+.operation .prepare .start button h5 {
   font-size: .36rem;
   color: #fff;
   font-weight: 900;
@@ -346,15 +378,51 @@ input::-webkit-input-placeholder {
 .operation .prepare .flex a {
   display: block;
 }
-.operation .prepare .bottom {
-  display: none;
-  margin-top: -0.2rem;
+.operation .chat-write {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  width: 100%;
+  height: 2.3rem;
+  padding: .16rem .3rem;
+  z-index: 840;
 }
-.operation .prepare .bottom img {
-  width: 7.5rem;
+.operation .chat-write textarea {
+  margin: 0;
+  width: 6.9rem;
+  height: 1.3rem;
+  padding: .2rem;
+  font-size: .28rem;
+}
+.operation .chat-write button {
+  width: 1.5rem;
+  height: .5rem;
+  background: #ffe33a;
+  border: none;
+  float: right;
+  margin-top: .1rem;
+}
+.operation .chat-write:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.operation .chat-meng {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 800;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
 }
 .operation .zua {
   position: relative;
+  height: 2.5rem;
 }
 .operation .zua button {
   border: none;
@@ -363,36 +431,39 @@ input::-webkit-input-placeholder {
   width: 1.5rem;
   background: transparent;
   position: absolute;
-}
-.operation .zua img {
-  width: 1.5rem;
-  height: 1.46rem;
+  z-index: 200;
 }
 .operation .zua .up {
   top: -0.76rem;
   left: 1.46rem;
+  background: url(../images/up.png);
+  background-size: cover;
 }
 .operation .zua .right {
   top: .12rem;
   left: 2.7rem;
+  background: url(../images/right.png);
+  background-size: cover;
 }
 .operation .zua .down {
   top: .7rem;
   left: 1.46rem;
+  background: url(../images/down.png);
+  background-size: cover;
 }
 .operation .zua .left {
   top: .12rem;
   left: .1rem;
+  background: url(../images/left.png);
+  background-size: cover;
 }
 .operation .zua .go {
   width: 1.8rem;
   height: 1.8rem;
   right: .2rem;
   top: .3rem;
-}
-.operation .zua .go img {
-  width: 1.8rem;
-  height: 1.8rem;
+  background: url(../images/go.png);
+  background-size: cover;
 }
 .operation .result {
   position: fixed;
@@ -447,6 +518,24 @@ input::-webkit-input-placeholder {
 }
 .operation .no .content {
   background-image: url(../images/result2.png);
+}
+.operation .share-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 500;
+  display: none;
+}
+.operation .share-box img {
+  float: right;
+  width: 4.38rem;
+  height: 4.09rem;
+}
+.onepage-pagination {
+  display: none;
 }
 .people .head {
   background: #fce13d;
@@ -687,15 +776,16 @@ input::-webkit-input-placeholder {
 .my-baby ul li:nth-child(2n) {
   margin-left: .1rem;
 }
-.my-baby .no-baby {
+.no-baby {
   text-align: center;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0;
+  background: #fff;
 }
-.my-baby .no-baby img {
+.no-baby img {
   width: 3.2rem;
   height: 2.98rem;
 }
-.my-baby .no-baby a {
+.no-baby a {
   display: block;
   margin: .48rem auto;
   width: 3.2rem;
@@ -805,22 +895,22 @@ input::-webkit-input-placeholder {
   border: none;
 }
 .detail .tab {
-  height: 1.9rem;
-  background-image: url(../images/tabBg_02.png);
-  background-size: 7.5rem 1.2rem;
+  padding-top: .1rem;
+  height: 1.64rem;
+  background-image: url(../images/tabBg2.png);
+  background-size: 7.5rem auto;
+  background-position: top;
   background-repeat: no-repeat;
   border-bottom: .01rem solid #eee;
 }
 .detail .tab div {
   width: 2.5rem;
-  padding-top: .16rem;
   text-align: center;
   border-bottom: .06rem solid transparent;
 }
 .detail .tab div span {
   display: block;
   height: .9rem;
-  margin-top: .2rem;
 }
 .detail .tab div img {
   width: 1.2rem;
@@ -840,6 +930,9 @@ input::-webkit-input-placeholder {
   display: block;
   margin: 0 auto;
 }
+.detail .content {
+  background: #fff;
+}
 .detail .baby-detail {
   text-align: center;
   padding-top: 1.5rem;
@@ -856,6 +949,7 @@ input::-webkit-input-placeholder {
   font-size: .3rem;
   color: #b4d6ef;
   margin-top: .4rem;
+  padding-bottom: .6rem;
 }
 .detail .record {
   display: none;
@@ -955,6 +1049,9 @@ input::-webkit-input-placeholder {
   width: .9rem;
   height: .9rem;
   margin-right: .3rem;
+}
+.info ul li div {
+  width: 5.6rem;
 }
 .info ul li p {
   color: #373737;
@@ -1098,4 +1195,84 @@ input::-webkit-input-placeholder {
   line-height: .44rem;
   font-size: .28rem;
   color: #333;
+}
+.bind-phone {
+  padding: 0 .5rem;
+}
+.bind-phone ul {
+  padding-top: 9.8rem;
+  padding-bottom: .3rem;
+}
+.bind-phone ul li div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: .9rem;
+}
+.bind-phone ul li div input {
+  margin: 0;
+  height: .86rem;
+  border-radius: .5rem;
+  border: none;
+}
+.bind-phone ul li div span {
+  font-size: .4rem;
+  color: #9b9b9b;
+}
+.bind-phone ul li div .check {
+  width: 3rem;
+  border: 1px solid #f2f2f2;
+  padding-left: .5rem;
+}
+.bind-phone ul li div .get-check {
+  width: 3.1rem;
+  border: none;
+  background: #22d472;
+  color: #fff;
+  height: .86rem;
+  border-radius: .5rem;
+}
+.bind-phone ul li .radious {
+  background: #fff;
+  border: 1px solid #f2f2f2;
+  border-radius: .5rem;
+  margin-bottom: .3rem;
+  padding: 0 .5rem;
+}
+.bind-phone .sub {
+  background: #ffe33a;
+  height: .88rem;
+  border: none;
+  border-radius: .5rem;
+  width: 6.5rem;
+}
+.address ul {
+  padding: 0 .2rem;
+}
+.address ul li {
+  height: 1rem;
+  margin-top: .3rem;
+}
+.address ul li input {
+  height: 1rem;
+  border: none;
+  margin: 0;
+  padding: 0;
+  text-indent: .3rem;
+  font-size: .28rem;
+  border-radius: .24rem;
+}
+.address ul li input::-webkit-input-placeholder {
+  color: #373737;
+}
+.address button {
+  background: url(../images/share_03.png);
+  background-size: cover;
+  height: .8rem;
+  border: none;
+  border-radius: .5rem;
+  width: 3.2rem;
+  display: block;
+  margin: 1rem auto;
+  font-size: .32rem;
 }

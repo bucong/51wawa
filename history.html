@@ -45,8 +45,17 @@
 				<h5 class="fail">抓取1次失败</h5>
 			</li>
 		</ul>
+		<section class="no-baby">
+			<img src="images/myBaby_03.png"/>
+		</section>
 	</article>
 	<script src="js/main.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		if($('.history ul li').length>0){
+			$('.history ul').show();
+			$('.history .no-baby').hide();
+		}
+	</script>
 </body>
 
 </html>

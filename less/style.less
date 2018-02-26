@@ -1,3 +1,4 @@
+
 //pubilc
 html{
 　　-webkit-text-size-adjust:none;
@@ -85,7 +86,7 @@ input::-webkit-input-placeholder{
     .login{
         button{
             display: block;
-            margin: 10.4rem auto .4rem auto;
+            margin: 9.46rem auto .4rem auto;
             width: 3.66rem;
             height: 1.11rem;
             border: none;
@@ -123,6 +124,7 @@ input::-webkit-input-placeholder{
             img{
                 width: 7.1rem;
                 height: 3.14rem;
+                border-radius: .1rem;
             }
         }
     }
@@ -194,7 +196,20 @@ input::-webkit-input-placeholder{
     }
 }
 //抓娃娃
+.touch-swipe{
+    article{
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        margin: 0;
+    }
+}
 .operation{
+    height: 10.8rem;
+    background: url(../images/bg.png);
+    background-size: cover;
     .people{
         width: 3.4rem;
         overflow: hidden;
@@ -307,28 +322,46 @@ input::-webkit-input-placeholder{
             font-size: .72rem;
             color: #fff;
         }
+        .loading{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../images/loading.png);
+            background-position: center;
+            background-size: 4rem 4.5rem;
+            background-repeat: no-repeat;
+            z-index: 100;
+        }
     }
     .prepare{
         position: relative;
-        button{
+        height: 2.5rem;
+        .start{
             position: absolute;
             left: 1.95rem;
-            width: 3.64rem;
-            height: 1.42rem;
             top: -.7rem;
-            border: none;
-            background: url(../images/operation_06.png) no-repeat;
-            background-size: cover;
-            color: #fff;
-            font-size: .32rem;
-            line-height: 1.96rem;
-            text-indent: 1rem;
-            h5{
-                font-size: .36rem;
+            border-radius: 1rem;
+            background: #ffe264;
+            button{
+                width: 3.64rem;
+                height: 1.42rem;
+                border: none;
+                background: url(../images/operation_06.png) no-repeat;
+                background-size: cover;
                 color: #fff;
-                font-weight: 900;
+                font-size: .32rem;
+                line-height: 1.96rem;
+                text-indent: 1rem;
+                z-index: 200;
+                h5{
+                    font-size: .36rem;
+                    color: #fff;
+                    font-weight: 900;
+                }
             }
-        }
+        } 
         .flex{
             padding-top: .66rem;
             font-size: .3rem;
@@ -360,16 +393,52 @@ input::-webkit-input-placeholder{
                 display: block;
             }
         }
-        .bottom{
-            display: none;
-            margin-top: -.2rem;
-            img{
-                width: 7.5rem;
-            }
-        }
     } 
+    .chat-write{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto;
+        width: 100%;
+        height: 2.3rem;
+        padding: .16rem .3rem;
+        z-index: 840;
+        textarea{
+            margin: 0;
+            width: 6.9rem;
+            height: 1.3rem;
+            padding: .2rem;
+            font-size: .28rem;
+        }
+        button{
+            width: 1.5rem;
+            height: .5rem;
+            background: #ffe33a;
+            border: none;
+            float: right;
+            margin-top: .1rem;
+        }
+    }
+    .chat-write:after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+    .chat-meng{
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 800;
+        background: rgba(0,0,0,.5);
+        display: none;
+    }
     .zua{
         position: relative;
+        height: 2.5rem;
         button{
             border: none;
             border-radius: 50%;
@@ -377,36 +446,39 @@ input::-webkit-input-placeholder{
             width: 1.5rem;
             background: transparent;
             position: absolute;
-        }
-        img{
-            width: 1.5rem;
-            height: 1.46rem;
+            z-index: 200;
         }
         .up{
             top: -.76rem;
             left: 1.46rem;
+            background: url(../images/up.png);
+            background-size: cover;
         }
         .right{
             top: .12rem;
             left: 2.7rem;
+            background: url(../images/right.png);
+            background-size: cover;
         }
         .down{
             top: .7rem;
             left: 1.46rem;
+            background: url(../images/down.png);
+            background-size: cover;
         }
         .left{
             top: .12rem;
             left: .1rem;
+            background: url(../images/left.png);
+            background-size: cover;
         }
         .go{
             width: 1.8rem;
             height: 1.8rem;
             right: .2rem;
             top: .3rem;
-            img{
-                width: 1.8rem;
-                height: 1.8rem;
-            }
+            background: url(../images/go.png);
+            background-size: cover;
         }
     }
     .result{
@@ -468,6 +540,24 @@ input::-webkit-input-placeholder{
             background-image: url(../images/result2.png);
         }
     }
+    .share-box{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,.7);
+        z-index: 500;
+        display: none;
+        img{
+            float: right;
+            width: 4.38rem;
+            height: 4.09rem;
+        }
+    }
+}
+.onepage-pagination{
+    display: none;
 }
 //个人中心
 .people{
@@ -725,21 +815,22 @@ input::-webkit-input-placeholder{
             margin-left: .1rem;
         }
     }
-    .no-baby{
-        text-align: center;
-        padding-top: 1.5rem;
-        img{
-            width: 3.2rem;
-            height: 2.98rem;
-        }
-        a{
-            display: block;
-            margin: .48rem auto;
-            width: 3.2rem;
-            height: .8rem;
-            background: url(../images/myBaby_06.png) no-repeat;
-            background-size: cover;
-        }
+}
+.no-baby{
+    text-align: center;
+    padding: 1.5rem 0;
+    background: #fff;
+    img{
+        width: 3.2rem;
+        height: 2.98rem;
+    }
+    a{
+        display: block;
+        margin: .48rem auto;
+        width: 3.2rem;
+        height: .8rem;
+        background: url(../images/myBaby_06.png) no-repeat;
+        background-size: cover;
     }
 }
 //游戏历史
@@ -850,20 +941,20 @@ input::-webkit-input-placeholder{
 //详情
 .detail{
     .tab{
-        height: 1.9rem;
-        background-image: url(../images/tabBg_02.png);
-        background-size: 7.5rem 1.2rem;
+        padding-top: .1rem;
+        height: 1.64rem;
+        background-image: url(../images/tabBg2.png);
+        background-size: 7.5rem auto;
+        background-position: top;
         background-repeat: no-repeat;
         border-bottom: .01rem solid #eee;
         div{
             width: 2.5rem;
-            padding-top: .16rem;
             text-align: center;
             border-bottom: .06rem solid transparent;
             span{
                 display: block;
                 height: .9rem;
-                margin-top: .2rem;
             }
             img{
                 width: 1.2rem;
@@ -885,6 +976,9 @@ input::-webkit-input-placeholder{
             }
         }
     }
+    .content{
+        background: #fff;
+    }
     .baby-detail{
         text-align: center;
         padding-top: 1.5rem;
@@ -900,6 +994,7 @@ input::-webkit-input-placeholder{
             font-size: .3rem;
             color: #b4d6ef;
             margin-top: .4rem;
+            padding-bottom: .6rem;
         }
     }
     .record{
@@ -1009,6 +1104,9 @@ input::-webkit-input-placeholder{
                 width: .9rem;
                 height: .9rem;
                 margin-right: .3rem;
+            }
+            div{
+                width: 5.6rem;
             }
             p{
                 color: #373737;
@@ -1167,5 +1265,92 @@ input::-webkit-input-placeholder{
                 color: #333;
             }
         }
+    }
+}
+//绑定手机号
+.bind-phone{
+    padding: 0 .5rem;
+    ul{
+        padding-top: 9.8rem;
+        padding-bottom: .3rem;
+        li{  
+            div{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: .9rem;
+                input{
+                    margin: 0;
+                    height: .86rem;
+                    border-radius: .5rem;
+                    border: none;
+                }
+                span{
+                    font-size: .4rem;
+                    color: #9b9b9b;
+                    
+                }
+                .check{
+                    width: 3rem;
+                    border: 1px solid #f2f2f2;
+                    padding-left: .5rem;
+                }
+                .get-check{
+                    width: 3.1rem;
+                    border: none;
+                    background: #22d472;
+                    color: #fff;
+                    height: .86rem;
+                    border-radius: .5rem;
+                }
+            }
+            .radious{
+                background: #fff;
+                border: 1px solid #f2f2f2;
+                border-radius: .5rem;
+                margin-bottom: .3rem;
+                padding: 0 .5rem;
+            }
+        }
+    }
+    .sub{
+        background: #ffe33a;
+        height: .88rem;
+        border: none;
+        border-radius: .5rem;
+        width: 6.5rem;
+    }
+}
+//我的收货地址
+.address{
+    ul{
+        padding: 0 .2rem;
+        li{
+            height: 1rem;
+            margin-top: .3rem;
+            input{
+                height: 1rem;
+                border: none;
+                margin: 0;
+                padding: 0;
+                text-indent: .3rem;
+                font-size: .28rem;
+                border-radius: .24rem;
+            }
+            input::-webkit-input-placeholder{
+                color: #373737;
+            }
+        }
+    }
+    button{
+        background: url(../images/share_03.png);
+        background-size: cover;
+        height: .8rem;
+        border: none;
+        border-radius: .5rem;
+        width: 3.2rem;
+        display: block;
+        margin: 1rem auto;
+        font-size: .32rem;
     }
 }
